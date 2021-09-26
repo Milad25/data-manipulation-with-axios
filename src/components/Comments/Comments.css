@@ -1,0 +1,14 @@
+section {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 90vw;
+  padding: 0 0.7rem;
+}

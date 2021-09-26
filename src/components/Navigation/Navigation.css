@@ -1,0 +1,30 @@
+.navbar {
+  background-color: #ccc;
+  height: 70px;
+  width: 100vw;
+}
+
+.navbar-list {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+  height: 100%;
+  font-size: x-large;
+  align-items: center;
+}
+
+.link {
+  color: rgb(43, 36, 36);
+}
+
+.activeLink {
+  color: blueviolet;
+}
+
+@media screen and (max-width: 760px) {
+  .navbar-list {
+    width: 100vw;
+  }
+}
+
+
