@@ -1,4 +1,3 @@
-import axios from 'axios';
 import http from './httpService';
 // import instance from "../components/axiosInstance";
 
@@ -13,6 +12,3 @@ export function addNewComment(data) {
 
   return http.post('/comments/', data, header);
 }
-
-// How axios.put works:
-// http.put(`/endpoint/${id}`, data)

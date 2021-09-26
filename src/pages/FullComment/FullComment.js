@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import './FullComment.css';
-import { getAllComments } from '../../services/getAllCommentsService';
 import { getOneComment } from '../../services/getOneCommentService';
 import { deleteComment } from '../../services/deleteCommentService';
 
@@ -8,7 +7,11 @@ const FullComment = ({ match, history }) => {
   const [comment, setComment] = useState('');
   const commentId = match.params.id;
 
-  useEffect(async () => {
+  useEffect(() => {
+    getOneCommentHandler();
+  }, [commentId]);
+
+  const getOneCommentHandler = async () => {
     if (commentId) {
       try {
         const response = await getOneComment(commentId);
@@ -18,7 +21,7 @@ const FullComment = ({ match, history }) => {
         console.log(error);
       }
     }
-  }, [commentId]);
+  };
 
   const deleteCommentHandler = async () => {
     try {

@@ -3,7 +3,6 @@ import Comment from './Comment/Comment';
 import './Comments.css';
 import { toast } from 'react-toastify';
 import { getAllComments } from '../../services/getAllCommentsService';
-import { addNewComment } from '../../services/addNewCommentService';
 import { Link } from 'react-router-dom';
 
 const CommentsList = () => {
@@ -35,17 +34,6 @@ const CommentsList = () => {
 
 
 
-  const postCommentHandler = async (comment) => {
-    try {
-      await addNewComment(comment);
-      // setComments([...comments, res.data]);
-
-      const res = await getAllComments();
-      setComments(res.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   const renderComments = () => {
     let toBeRendered = <p>Loading...</p>;
