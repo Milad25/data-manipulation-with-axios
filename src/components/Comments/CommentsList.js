@@ -32,9 +32,6 @@ const CommentsList = () => {
     }
   };
 
-
-
-
   const renderComments = () => {
     let toBeRendered = <p>Loading...</p>;
     if (error) {
@@ -44,10 +41,7 @@ const CommentsList = () => {
       toBeRendered = comments.map((comment) => {
         return (
           <Link to={`/comment/${comment.id}`} key={comment.id}>
-            <Comment
-              name={comment.name}
-              email={comment.email}
-            />
+            <Comment name={comment.name} email={comment.email} />
           </Link>
         );
       });
